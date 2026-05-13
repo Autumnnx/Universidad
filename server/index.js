@@ -43,14 +43,17 @@ app.get('/docentes/:id', (req, res) => {
     });
 });
 
-
 //RUTA 3 GUARDAR UN DOCENTE
 
 app.post('/docentes', (req, res) => {
     const { nombre, correo, telefono, titulo, area_academica, dedicacion, anios_experiencia } = req.body;
+
+    //Validar input de datos adecuado por el formulario: valida que no reciba campos vacíos ni campos con espacios
     if (!nombre?.trim() || !correo?.trim() || !telefono?.trim() || !titulo?.trim() || !area_academica?.trim() || !dedicacion?.trim()) {
         return res.status(400).json({ error: 'todos los campos son requeridos' });
     }
+
+    //Validación de que los años de experiencia no sean negativos
     const anios = Number(anios_experiencia);
 
     if (Number.isNaN(anios) || anios < 0) {

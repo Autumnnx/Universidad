@@ -4,7 +4,7 @@ server/node_modules/
 # Variables de entorno (Archivo sensible en server)
 server/.env
 
-# Otros archivos comunes que podrías querer ignorar
+# Otros archivos comunes
 .DS_Store
 dist/
 build/
