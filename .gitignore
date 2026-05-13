@@ -1,0 +1,11 @@
+# Dependencias de Node (Carpeta server)
+server/node_modules/
+
+# Variables de entorno (Archivo sensible en server)
+server/.env
+
+# Otros archivos comunes que podrías querer ignorar
+.DS_Store
+dist/
+build/
+*.log
